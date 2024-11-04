@@ -8,44 +8,40 @@ import ResumeSkills from "@components/resume/skills.md";
 import { Icon } from "astro-icon/components";
 ---
 
-<script>
-  const button = document.getElementById("download");
-  button?.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.print();
-  });
-</script>
-
-<button id="download" class="ml-auto flex items-center gap-1 underline print:hidden">
+<a
+  id="download"
+  class="ml-auto flex w-max items-center gap-1 underline print:hidden"
+  href="/resume/resume.pdf"
+  target="_blank"
+>
   <Icon name="file-down" />
   <span>Download resume</span>
-</button>
+</a>
 
 <article
   id="resume"
-  aria-label="resume"
   class="prose max-w-fit bg-white p-4 text-justify font-resume shadow-lg prose-h1:m-0 prose-h1:text-lg prose-h2:m-0 prose-h2:mt-2 prose-h2:text-base prose-h2:text-blue-700 prose-h3:m-0 prose-h3:text-sm prose-p:m-0 prose-p:text-xs prose-p:text-black prose-a:font-semibold prose-strong:text-xs prose-ul:m-0 prose-li:m-1 prose-li:text-xs prose-li:text-black prose-li:marker:text-blue-200 prose-hr:my-1 print:max-h-none print:max-w-none print:shadow-none print:prose-a:no-underline"
 >
   <div class="grid grid-cols-2">
-    <section aria-label="title">
+    <section>
       <ResumeTitle />
     </section>
-    <section aria-label="contact" class="text-right print:prose-a:font-normal">
+    <section class="text-right print:prose-a:font-normal">
       <ResumeContact />
     </section>
   </div>
   <hr />
 
-  <section aria-label="work experience">
+  <section>
     <ResumeWorkExperience />
   </section>
   <hr />
 
-  <section aria-label="projects"><ResumeProjects /></section>
+  <section><ResumeProjects /></section>
   <hr />
 
-  <section aria-label="skills"><ResumeSkills /></section>
+  <section><ResumeSkills /></section>
   <hr />
 
-  <section aria-label="educations"><ResumeEducation /></section>
+  <section><ResumeEducation /></section>
 </article>
