@@ -1,0 +1,18 @@
+---
+type Props = {
+  route: string;
+  name: string;
+};
+
+const { route, name } = Astro.props;
+const page = Astro.url.pathname;
+
+const isCurrentPage = page === route || (route !== "/" && page.startsWith(route));
+---
+
+<a
+  href={route}
+  class={`transition-all hover:text-app-blue ${isCurrentPage ? "font-bold text-br-app-blue" : "text-app-white"}`}
+>
+  {name}
+</a>

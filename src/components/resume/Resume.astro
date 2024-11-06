@@ -8,15 +8,17 @@ import ResumeSkills from "@components/resume/skills.md";
 import { Icon } from "astro-icon/components";
 ---
 
-<a
-  id="download"
-  class="ml-auto flex w-max items-center gap-1 underline print:hidden"
-  href="/resume/resume.pdf"
-  target="_blank"
->
-  <Icon name="file-down" />
-  <span>Download resume</span>
-</a>
+<div class="flex justify-end">
+  <a
+    id="download"
+    class="inline-flex items-center gap-1 underline print:hidden"
+    href="/resume/resume.pdf"
+    target="_blank"
+  >
+    <Icon name="file-down" />
+    <span>Download resume</span>
+  </a>
+</div>
 
 <article
   id="resume"

@@ -1,0 +1,16 @@
+---
+import { routes } from "@components/routes";
+import NavbarButton from "@components/layouts/navbar/NavbarButton.astro";
+---
+
+<nav class="py-2 print:hidden">
+  <ul class="flex gap-8">
+    {
+      Object.entries(routes).map(([route, name]) => (
+        <li>
+          <NavbarButton route={route} name={name} />
+        </li>
+      ))
+    }
+  </ul>
+</nav>
