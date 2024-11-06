@@ -2,8 +2,7 @@
   "printWidth": 120,
   "plugins": [
     "prettier-plugin-astro",
-    "prettier-plugin-tailwindcss",
-    "prettier-plugin-svelte"
+    "prettier-plugin-tailwindcss"
   ],
   "overrides": [
     {
@@ -11,10 +10,6 @@
       "options": {
         "parser": "astro"
       }
-    },
-    {
-      "files": "*.svelte",
-      "options": { "parser": "svelte" }
     }
   ]
 }
