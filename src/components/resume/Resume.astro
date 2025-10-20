@@ -5,6 +5,7 @@ import ResumeWorkExperience from "@components/resume/work-experiences.md";
 import ResumeProjects from "@components/resume/projects.md";
 import ResumeEducation from "@components/resume/education.md";
 import ResumeSkills from "@components/resume/skills.md";
+import ResumeSection from "@components/resume/ResumeSection.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -21,10 +22,10 @@ import { Icon } from "astro-icon/components";
 </div>
 
 <article
+  class="prose max-w-fit divide-y bg-white p-4 text-justify font-resume shadow-lg prose-h1:m-0 prose-h1:text-lg prose-h2:m-0 prose-h2:mb-2 prose-h2:text-sm prose-h2:text-blue-700 prose-h3:m-0 prose-h3:text-xs prose-p:m-0 prose-p:text-xs prose-p:text-black prose-a:font-semibold prose-strong:text-xs prose-ul:m-0 prose-li:m-1 prose-li:text-xs prose-li:text-black prose-li:marker:text-blue-200 prose-hr:my-1 print:max-h-none print:max-w-none print:shadow-none print:prose-a:no-underline"
   id="resume"
-  class="prose max-w-fit bg-white p-4 text-justify font-resume shadow-lg prose-h1:m-0 prose-h1:text-lg prose-h2:m-0 prose-h2:mt-2 prose-h2:text-base prose-h2:text-blue-700 prose-h3:m-0 prose-h3:text-sm prose-p:m-0 prose-p:text-xs prose-p:text-black prose-a:font-semibold prose-strong:text-xs prose-ul:m-0 prose-li:m-1 prose-li:text-xs prose-li:text-black prose-li:marker:text-blue-200 prose-hr:my-1 print:max-h-none print:max-w-none print:shadow-none print:prose-a:no-underline"
 >
-  <div class="grid grid-cols-2">
+  <div class="grid grid-cols-2 pb-1">
     <section>
       <ResumeTitle />
     </section>
@@ -32,18 +33,20 @@ import { Icon } from "astro-icon/components";
       <ResumeContact />
     </section>
   </div>
-  <hr />
 
-  <section>
+  <ResumeSection>
     <ResumeWorkExperience />
-  </section>
-  <hr />
+  </ResumeSection>
 
-  <section><ResumeProjects /></section>
-  <hr />
+  <ResumeSection>
+    <ResumeProjects />
+  </ResumeSection>
 
-  <section><ResumeSkills /></section>
-  <hr />
+  <ResumeSection>
+    <ResumeSkills />
+  </ResumeSection>
 
-  <section><ResumeEducation /></section>
+  <ResumeSection>
+    <ResumeEducation />
+  </ResumeSection>
 </article>
